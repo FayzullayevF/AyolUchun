@@ -1,0 +1,21 @@
+{
+  "welcome": "Xush kelibsiz!",
+  "welcomeTitle" : "O‘quv platformasiga kirish uchun quyida elektron \u2028pochtangiz va parolingizni kiriting",
+  "enter": "Kirish",
+  "forgotPassword": "Parolni unutdingizmi",
+  "enterByThis": "Quydagilar orqali kirish",
+  "signUp": "Ro'yxatdan o'tish",
+  "enterToSystemBy": "Tizimga kirish orqali siz",
+  "usingCondition": "foydalanish shartlari",
+  "and": "va",
+  "security": "maxfiylik siyosatiga",
+  "confirmAgreement": "roziligizi tasdiqlang",
+  "continues": "Davom etish",
+  "enterPhoneNumberSubtitle": "O‘quv platformasiga kirish uchun telefon raqamingizni kiriting",
+  "enterPhoneNumber": "Telefon raqami",
+  "confirmCodeSent": "Telefon raqamingizga tasdiqlash kodi yuborildi",
+  "verificationCode": "Tasdiqlash kodi",
+  "successfullyConfirmed": "Muvofaqiyatli tasdiqlandi",
+  "phoneNumberConfirmed": "Telefon raqamingiz muvaffaqiyatli tasdiqlandi",
+  "understand": "Tushunarli"
+}

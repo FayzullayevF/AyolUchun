@@ -1,0 +1,21 @@
+{
+  "welcome": "Welcome",
+  "welcomeTitle" : "Please enter your email address and password below to access the learning platform",
+  "enter": "Enter",
+  "forgotPassword": "Forgotten password",
+  "enterByThis": "Enter by this",
+  "signUp": "Sign Up",
+  "enterToSystemBy": "By entering to the system you ",
+  "usingCondition": "using conditions",
+  "and": "and ",
+  "security": "Privacy Policy",
+  "confirmAgreement": "should confirm",
+  "continues": "Continue",
+  "enterPhoneNumberSubtitle": "Please enter your phone number to access the learning platform.",
+  "enterPhoneNumber": "Phone number",
+  "confirmCodeSent": "A verification code has been sent to your phone number",
+  "verificationCode": "Verification code",
+  "successfullyConfirmed": "Successfully confirmed",
+  "phoneNumberConfirmed": "Your phone number has been successfully verified",
+  "understand": "Understand"
+}
