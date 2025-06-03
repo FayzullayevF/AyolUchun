@@ -18,7 +18,7 @@ class _OnboardingViewState extends State<OnboardingView> {
   @override
   void initState(){
     super.initState();
-    Timer(Duration(seconds: 3),(){
+    Timer(Duration(seconds: 5),(){
       context.go(Routes.login);
     });
 

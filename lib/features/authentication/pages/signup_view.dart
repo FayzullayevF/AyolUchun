@@ -1,19 +1,17 @@
-import 'package:ayol_uchun/core/utils/colors.dart';
-import 'package:ayol_uchun/features/authentication/widgets/auth_text_form_field.dart';
-import 'package:ayol_uchun/features/authentication/widgets/login_title.dart';
-import 'package:ayol_uchun/features/authentication/widgets/social_media_icon.dart';
-import 'package:ayol_uchun/features/common/app_icon.dart';
-import 'package:ayol_uchun/features/common/auth_service.dart';
+import 'package:ayol_uchun/core/routing/routes.dart';
+import 'package:ayol_uchun/features/authentication/widgets/signup_view_text_rich.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/routing/routes.dart';
+import '../../../core/utils/colors.dart';
+import '../../common/app_icon.dart';
+import '../widgets/auth_text_form_field.dart';
+import '../widgets/login_title.dart';
+import '../widgets/social_media_icon.dart';
 
-class LoginView extends StatelessWidget {
-  LoginView({super.key});
-
-  final auth = AuthService();
+class SignupView extends StatelessWidget {
+  const SignupView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -40,34 +38,22 @@ class LoginView extends StatelessWidget {
                     ),
                     SizedBox(height: 8.h),
                     LoginTitle(
-                      title: "O‘quv platformasiga kirish uchun quyida elektron  pochtangiz va parolingizni kiriting",
+                      title: "O‘quv platformasiga kirish uchun quyida berilgan maydonlarni to‘ldirib ro‘yxatdan o‘ting",
                       color: AppColor.backgroundColor,
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
                     ),
                     SizedBox(height: 57.h),
                     LoginTitle(
-                      title: "Kirish",
+                      title: "Ro'yxatdan o'tish",
                       color: AppColor.backgroundColor,
                       fontWeight: FontWeight.w500,
                       fontSize: 13,
                     ),
                     SizedBox(height: 20.h),
                     AuthTextFormField(
-                      prefix: "assets/icons/phone.svg",
-                      hintText: "+998",
-                      fontWeight: FontWeight.w400,
-                      color: AppColor.textFieldTextColor,
-                      autoValidateMode: AutovalidateMode.always,
-                      size: 14,
-                      validator: (value) {},
-                      keyboardType: TextInputType.phone,
-                    ),
-                    SizedBox(height: 8.h),
-                    AuthTextFormField(
-                      suffix: "assets/icons/eye.svg",
-                      prefix: "assets/icons/lock.svg",
-                      hintText: "Parol",
+                      prefix: "assets/icons/user.svg",
+                      hintText: "Ism",
                       fontWeight: FontWeight.w400,
                       color: AppColor.textFieldTextColor,
                       autoValidateMode: AutovalidateMode.always,
@@ -75,17 +61,29 @@ class LoginView extends StatelessWidget {
                       validator: (value) {},
                       keyboardType: TextInputType.text,
                     ),
-                    SizedBox(height: 12.h),
-                    GestureDetector(
-                      onTap: () => context.go(Routes.enterNumber),
-                      child: LoginTitle(
-                        title: "Parolni unutdingizmi",
-                        color: AppColor.backgroundColor,
-                        fontWeight: FontWeight.w400,
-                        fontSize: 13,
-                      ),
+                    SizedBox(height: 8.h),
+                    AuthTextFormField(
+                      prefix: "assets/icons/user.svg",
+                      hintText: "Familiya",
+                      fontWeight: FontWeight.w400,
+                      color: AppColor.textFieldTextColor,
+                      autoValidateMode: AutovalidateMode.always,
+                      size: 14,
+                      validator: (value) {},
+                      keyboardType: TextInputType.text,
                     ),
-                    SizedBox(height: 129.h),
+                    SizedBox(height: 8.h),
+                    AuthTextFormField(
+                      prefix: "assets/icons/message.svg",
+                      hintText: "Elektron pochta",
+                      fontWeight: FontWeight.w400,
+                      color: AppColor.textFieldTextColor,
+                      autoValidateMode: AutovalidateMode.always,
+                      size: 14,
+                      validator: (value) {},
+                      keyboardType: TextInputType.text,
+                    ),
+                    SizedBox(height: 60.h),
                     Divider(color: AppColor.dividerColor, height: 0.5),
                     SizedBox(height: 16.h),
                     LoginTitle(
@@ -97,27 +95,15 @@ class LoginView extends StatelessWidget {
                     SizedBox(height: 16.h),
                     Row(
                       children: [
-                        GestureDetector(
-                          onTap: auth.signInWithGoogle,
-                          child: SocialMediaIcon(svg: "assets/icons/google.svg", title: "Google"),
-                        ),
+                        SocialMediaIcon(svg: "assets/icons/google.svg", title: "Google"),
                         SizedBox(width: 8.w),
-                        GestureDetector(
-                          onTap: auth.signInWithApple,
-                          child: SocialMediaIcon(svg: "assets/icons/apple.svg", title: "Apple"),
-                        ),
+                        SocialMediaIcon(svg: "assets/icons/apple.svg", title: "Apple"),
                       ],
                     ),
-                    SizedBox(height: 32.h),
-                    GestureDetector(
-                      onTap: () => context.go(Routes.home),
-                      child: AppIcon(backgroundColor: AppColor.dangerColor, title: "Kirish"),
-                    ),
+                    SizedBox(height: 84.h),
+                    SignupViewTextRich(),
                     SizedBox(height: 8.h),
-                    GestureDetector(
-                      onTap: () => context.go(Routes.signup),
-                      child: AppIcon(backgroundColor: AppColor.darkBlueColor, title: "Ro'yxatdan o'tish"),
-                    ),
+                    GestureDetector(onTap: ()=> context.go(Routes.login),child: AppIcon(backgroundColor: AppColor.dangerColor, title: "Davom etish")),
                   ],
                 ),
               ),
@@ -126,5 +112,6 @@ class LoginView extends StatelessWidget {
         ),
       ),
     );
+    ;
   }
 }

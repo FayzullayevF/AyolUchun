@@ -5,6 +5,7 @@ class Routes{
   static const enterNumber = "/enterNumber";
   static const confirmPassword = "/confirmPassword";
   static const onboarding = "/onboarding";
+  static const confirmCode = "/confirmCode";
   static const home = "/";
   static const courses = "/courses";
 
