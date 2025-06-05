@@ -11,8 +11,6 @@ class AppColor {
   static const shadowColor = Color(0xFFE8EDF1);
   static const blackColor = Color(0xFF222222);
   static const categoryColor = Color(0xFFFBF2F4);
-
-
-
-
+  static const categoryContainerColor = Color(0xFFFDD3DB);
+  static const complexColor = Color(0xFFF5365C);
 }

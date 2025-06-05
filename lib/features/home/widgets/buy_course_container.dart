@@ -1,8 +1,9 @@
 import 'package:ayol_uchun/core/utils/colors.dart';
-import 'package:ayol_uchun/features/authentication/widgets/login_title.dart';
 import 'package:ayol_uchun/features/common/home_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../authentication/login/widgets/login_title.dart';
 
 class BuyCourseContainer extends StatelessWidget {
   const BuyCourseContainer({super.key});

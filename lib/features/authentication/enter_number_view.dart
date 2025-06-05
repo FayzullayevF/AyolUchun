@@ -3,13 +3,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
 
-import '../../../core/utils/colors.dart';
-import '../../common/app_icon.dart';
-import '../widgets/auth_text_form_field.dart';
-import '../widgets/login_title.dart';
+import '../../core/utils/colors.dart';
+import '../common/app_icon.dart';
+import 'login/widgets/auth_text_form_field.dart';
+import 'login/widgets/login_title.dart';
 
 class EnterNumber extends StatelessWidget {
-  const EnterNumber({super.key});
+  EnterNumber({super.key,});
+  bool? isValid;
+  final  controller = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +52,8 @@ class EnterNumber extends StatelessWidget {
                     ),
                     SizedBox(height: 20.h),
                     AuthTextFormField(
+                      isValid: isValid,
+                      controller: controller,
                       prefix: "assets/icons/phone.svg",
                       hintText: "+998",
                       fontWeight: FontWeight.w400,

@@ -1,12 +1,11 @@
-import 'package:ayol_uchun/features/authentication/widgets/pinput_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:go_router/go_router.dart';
-
-import '../../../core/routing/routes.dart';
-import '../../../core/utils/colors.dart';
-import '../../common/app_icon.dart';
-import '../widgets/login_title.dart';
+import '../../core/routing/routes.dart';
+import '../../core/utils/colors.dart';
+import '../common/app_icon.dart';
+import 'login/widgets/login_title.dart';
+import 'login/widgets/pinput_widget.dart';
 
 class ConfirmCodeView extends StatelessWidget {
   const ConfirmCodeView({super.key});
@@ -36,7 +35,8 @@ class ConfirmCodeView extends StatelessWidget {
                     ),
                     SizedBox(height: 8.h),
                     LoginTitle(
-                      title: "O‘quv platformasiga kirish uchun quyida telefon raqamingizga yuborilgan tasdiqlash kodini kiriting",
+                      title:
+                          "O‘quv platformasiga kirish uchun quyida telefon raqamingizga yuborilgan tasdiqlash kodini kiriting",
                       color: AppColor.backgroundColor,
                       fontWeight: FontWeight.w400,
                       fontSize: 13,
@@ -51,7 +51,10 @@ class ConfirmCodeView extends StatelessWidget {
                     SizedBox(height: 20.h),
                     PinPutWidget(),
                     SizedBox(height: 333.h),
-                    GestureDetector(onTap: ()=> context.go(Routes.confirmPassword),child: AppIcon(backgroundColor: AppColor.dangerColor, title: "Kirish")),
+                    GestureDetector(
+                      onTap: () => context.go(Routes.confirmPassword),
+                      child: AppIcon(backgroundColor: AppColor.dangerColor, title: "Kirish"),
+                    ),
                   ],
                 ),
               ),
@@ -59,6 +62,7 @@ class ConfirmCodeView extends StatelessWidget {
           ),
         ),
       ),
-    );;
+    );
+    ;
   }
 }

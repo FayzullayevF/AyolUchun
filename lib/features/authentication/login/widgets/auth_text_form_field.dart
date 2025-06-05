@@ -11,11 +11,10 @@ class AuthTextFormField extends StatefulWidget {
     required this.hintText,
     required this.fontWeight,
     required this.color,
-    required this.autoValidateMode,
+    this.autoValidateMode = AutovalidateMode.onUnfocus,
     required this.size,
     required this.validator,
-    this.isValid,
-    required this.keyboardType,
+    required this.keyboardType,required  this.isValid, required this.controller,
   });
 
   final String hintText;
@@ -28,19 +27,18 @@ class AuthTextFormField extends StatefulWidget {
   final String? Function(String?) validator;
   final bool? isValid;
   final TextInputType keyboardType;
+  final TextEditingController controller;
 
   @override
   State<AuthTextFormField> createState() => _AuthTextFormFieldState();
 }
 
 class _AuthTextFormFieldState extends State<AuthTextFormField> {
-  final controller = TextEditingController();
-
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       keyboardType: widget.keyboardType,
-      controller: controller,
+      controller: widget.controller,
       validator: widget.validator,
       autovalidateMode: widget.autoValidateMode,
       style: TextStyle(color: AppColor.textFieldTextColor, fontSize: 14, fontWeight: FontWeight.w400),
