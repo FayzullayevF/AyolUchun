@@ -1,12 +1,14 @@
 import 'package:ayol_uchun/core/utils/colors.dart';
 import 'package:ayol_uchun/features/common/app_appbar.dart';
-import 'package:ayol_uchun/features/home/pages/categories_main_container.dart';
+import 'package:ayol_uchun/features/common/bottom_nav_bar.dart';
+import 'package:ayol_uchun/features/home/widgets/categories_main_container.dart';
+import 'package:ayol_uchun/features/home/widgets/interviews_item.dart';
 import 'package:ayol_uchun/features/home/widgets/buy_course_container.dart';
+import 'package:ayol_uchun/features/home/widgets/last_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:hive/hive.dart';
 
 import '../../authentication/login/widgets/login_title.dart';
 import '../blocs/home_bloc.dart';
@@ -18,6 +20,7 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      extendBody: true,
       backgroundColor: AppColor.backgroundColor,
       appBar: AppAppbar(height: 133.h),
       body: BlocBuilder<HomeBloc, HomeState>(
@@ -62,39 +65,42 @@ class HomeView extends StatelessWidget {
                 ),
               ),
               SizedBox(height: 24.h),
-              LoginTitle(title: "INTERVIYULAR", color: AppColor.blackColor, fontWeight: FontWeight.bold, fontSize: 18),
-              SizedBox(height: 16.h),
-              Container(
-                width: 228.w,
-                height: 251.h,
-                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16)),
-                child: Stack(
+              Padding(
+                padding:  EdgeInsets.symmetric(horizontal: 16.w),
+                child: Column(
                   children: [
-                    Column(
+                    LoginTitle(
+                      title: "INTERVIYULAR",
+                      color: AppColor.blackColor,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
+                    SizedBox(height: 16.h),
+                    InterviewsItem(),
+                    SizedBox(height: 16.h),
+                    Row(
+                      spacing: 4.w,
                       children: [
-                        ClipRRect(
-                          borderRadius: BorderRadiusGeometry.only(
-                            topLeft: Radius.circular(16),
-                            topRight: Radius.circular(16),
-                          ),
-                          child: Image.asset(
-                            "assets/images/background.png",
-                            width: 228.w,
-                            height: 140.h,
-                            fit: BoxFit.cover,
-                          ),
+                        LoginTitle(
+                          title: "Barcha intervyular",
+                          color: AppColor.dividerColor,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 16,
                         ),
-                        SizedBox(height: 7.h),
-                        // Row(children: [SvgPicture.asset("assets/icons/clock.svg",width: 16.w,height: 16.h,fit: BoxFit.coverguit add .git commit -m "some changes"git push originmainn main,), Text("data")]),
+                        SvgPicture.asset("assets/icons/arrow-right.svg", width: 20.w, height: 20.h, fit: BoxFit.cover),
                       ],
                     ),
                   ],
                 ),
               ),
+              SizedBox(height: 24.h),
+              LastContainer(),
+              SizedBox(height: 100.h)
             ],
           ),
         ),
       ),
+      bottomNavigationBar: BottomNavBar(),
     );
   }
 }

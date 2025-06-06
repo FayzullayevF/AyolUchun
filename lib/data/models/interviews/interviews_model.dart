@@ -9,7 +9,7 @@ class InterviewsModel {
   final String user;
   final String title;
   final String image;
-  final String duration;
+  final int duration;
 
   InterviewsModel({
     required this.id,

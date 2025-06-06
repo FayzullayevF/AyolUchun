@@ -12,7 +12,7 @@ InterviewsModel _$InterviewsModelFromJson(Map<String, dynamic> json) =>
       user: json['user'] as String,
       title: json['title'] as String,
       image: json['image'] as String,
-      duration: json['duration'] as String,
+      duration: (json['duration'] as num).toInt(),
     );
 
 Map<String, dynamic> _$InterviewsModelToJson(InterviewsModel instance) =>

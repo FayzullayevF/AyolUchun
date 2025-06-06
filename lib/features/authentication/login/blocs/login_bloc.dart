@@ -1,7 +1,7 @@
-import 'package:ayol_uchun/data/repositories/auth/auth_repository.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
 
+import '../../../../data/repositories/authentication/auth_repository.dart';
 import 'login_event.dart';
 import 'login_state.dart';
 

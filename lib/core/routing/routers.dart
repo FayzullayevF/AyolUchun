@@ -25,7 +25,12 @@ GoRouter router = GoRouter(
     GoRoute(
       path: Routes.home,
       builder: (context, state) => BlocProvider(
-        create: (context) => HomeBloc(repo: context.read()),
+        create: (context) => HomeBloc(
+          repo: context.read(),
+          interviewsRepo: context.read(),
+          socialRepo: context.read(),
+          coursesRepo: context.read(),
+        ),
         child: HomeView(),
       ),
     ),

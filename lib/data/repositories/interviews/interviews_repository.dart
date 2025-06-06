@@ -7,7 +7,7 @@ class InterviewsRepository {
   List<InterviewsModel> models = [];
 
   Future<List<InterviewsModel>> fetchInterviews()async{
-  final rawInterviews = await client.getGenericRequest<List>("/interviews/list",queryParams: {"limit": 1});
+  final rawInterviews = await client.fetchInterviews();
   models = rawInterviews.map((e)=> InterviewsModel.fromJson(e)).toList();
   return models;
   }

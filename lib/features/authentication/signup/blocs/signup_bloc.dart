@@ -1,8 +1,9 @@
-import 'package:ayol_uchun/data/repositories/auth/auth_repository.dart';
 import 'package:ayol_uchun/features/authentication/signup/blocs/signup_event.dart';
 import 'package:ayol_uchun/features/authentication/signup/blocs/signup_state.dart';
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
+
+import '../../../../data/repositories/authentication/auth_repository.dart';
 
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   final AuthRepository _repo;
