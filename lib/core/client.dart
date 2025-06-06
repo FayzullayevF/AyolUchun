@@ -60,4 +60,22 @@ class ApiClient {
       throw Exception("Interviews error");
     }
   }
+
+  Future<List<dynamic>> fetchSocialAccount() async {
+    final response = await dio.get(
+      "/social-accounts/list",
+      options: Options(
+        validateStatus: (_) => true,
+        headers: {
+          'Authorization':
+              'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJwaG9uZV9udW1iZXIiOiIrOTk4OTM5NDQxNTI0IiwianRpIjoiMzA4OTA5NDctZTU4ZS00NDllLTkyM2UtOTMwMmM1NWU5OTY5IiwidXNlcmlkIjoiMyIsImV4cCI6MTg0Mzg4ODI5NiwiaXNzIjoibG9jYWxob3N0IiwiYXVkIjoiYXVkaWVuY2UifQ.xnlVXhuZdTPGhTJuRVDZScJTXbVa0xQGwaW27WikQgI',
+        },
+      ),
+    );
+    if (response.statusCode == 200) {
+      return response.data;
+    } else {
+      throw Exception("Social Account error");
+    }
+  }
 }

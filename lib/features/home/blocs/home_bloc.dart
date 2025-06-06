@@ -32,5 +32,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     emit(state.copyWith(status: HomeStatus.success, categories: categories));
     final interviews = await _interviewsRepo.fetchInterviews();
     emit(state.copyWith(status: HomeStatus.success, interviews: interviews));
+    final accounts = await _socialRepo.fetchSocialAccount();
+    emit(state.copyWith(status: HomeStatus.success, accounts: accounts));
   }
 }

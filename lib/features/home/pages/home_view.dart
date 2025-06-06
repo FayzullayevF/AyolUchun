@@ -1,9 +1,10 @@
 import 'package:ayol_uchun/core/utils/colors.dart';
 import 'package:ayol_uchun/features/common/app_appbar.dart';
 import 'package:ayol_uchun/features/common/bottom_nav_bar.dart';
+import 'package:ayol_uchun/features/home/widgets/social_media.dart';
+import 'package:ayol_uchun/features/home/widgets/buy_course_container.dart';
 import 'package:ayol_uchun/features/home/widgets/categories_main_container.dart';
 import 'package:ayol_uchun/features/home/widgets/interviews_item.dart';
-import 'package:ayol_uchun/features/home/widgets/buy_course_container.dart';
 import 'package:ayol_uchun/features/home/widgets/last_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -36,8 +37,16 @@ class HomeView extends StatelessWidget {
               Container(
                 width: 335.w,
                 height: 115.h,
-                padding: EdgeInsets.only(left: 16.w, bottom: 16.h, top: 20.h, right: 31.w),
-                decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(16)),
+                padding: EdgeInsets.only(
+                  left: 16.w,
+                  bottom: 16.h,
+                  top: 20.h,
+                  right: 31.w,
+                ),
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  borderRadius: BorderRadius.circular(16),
+                ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -51,22 +60,13 @@ class HomeView extends StatelessWidget {
                       ),
                     ),
                     SizedBox(height: 20.h),
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        SvgPicture.asset("assets/icons/instagram.svg", width: 32.w, height: 32.h, fit: BoxFit.cover),
-                        SvgPicture.asset("assets/icons/tik_tok.svg", width: 32.w, height: 32.h, fit: BoxFit.cover),
-                        SvgPicture.asset("assets/icons/youtube.svg", width: 32.w, height: 32.h, fit: BoxFit.cover),
-                        SvgPicture.asset("assets/icons/telegram.svg", width: 32.w, height: 32.h, fit: BoxFit.cover),
-                        SvgPicture.asset("assets/icons/facebook.svg", width: 32.w, height: 32.h, fit: BoxFit.cover),
-                      ],
-                    ),
+                    SocialMedia(accounts: state.accounts,),
                   ],
                 ),
               ),
               SizedBox(height: 24.h),
               Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 16.w),
+                padding: EdgeInsets.symmetric(horizontal: 16.w),
                 child: Column(
                   children: [
                     LoginTitle(
@@ -87,7 +87,12 @@ class HomeView extends StatelessWidget {
                           fontWeight: FontWeight.w600,
                           fontSize: 16,
                         ),
-                        SvgPicture.asset("assets/icons/arrow-right.svg", width: 20.w, height: 20.h, fit: BoxFit.cover),
+                        SvgPicture.asset(
+                          "assets/icons/arrow-right.svg",
+                          width: 20.w,
+                          height: 20.h,
+                          fit: BoxFit.cover,
+                        ),
                       ],
                     ),
                   ],
@@ -95,7 +100,7 @@ class HomeView extends StatelessWidget {
               ),
               SizedBox(height: 24.h),
               LastContainer(),
-              SizedBox(height: 100.h)
+              SizedBox(height: 100.h),
             ],
           ),
         ),

@@ -9,30 +9,39 @@ class LastContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsetsGeometry.symmetric(horizontal: 16.w, vertical: 16.h),
+      padding: EdgeInsetsGeometry.only(left: 16.w, bottom: 0, top: 16.h),
       width: 343.w,
       height: 267.h,
       decoration: BoxDecoration(color: AppColor.dangerColor, borderRadius: BorderRadiusGeometry.circular(16)),
-      child: Column(
+      child: Stack(
         children: [
-          Stack(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "👋🏻 Hey, Siz ham ayollar uchun foydali videolar tayyorlay olasizmi? Unda jamoamizga qo‘shiling!",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.w600,
-                  fontSize: 14,
-                  fontFamily: "OpenSans",
+              SizedBox(
+                width: 300.w,
+                child: Text(
+                  "👋🏻 Hey, Siz ham ayollar uchun foydali videolar tayyorlay olasizmi? Unda jamoamizga qo‘shiling!",
+                  maxLines: 3,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: 14,
+                    fontFamily: "OpenSans",
+                  ),
                 ),
               ),
-              Positioned(
-                left: 16.w,
-                top: 92.h,
-                child: HomeIcon(height: 44.h, width: 11.w, color: Colors.white, title: "Qo'shiling"),
+              SizedBox(height: 16.h),
+              HomeIcon(
+                height: 44.h,
+                width: 110.w,
+                color: Colors.white,
+                title: "Qo'shiling",
+                textColor: AppColor.dangerColor,
               ),
             ],
           ),
+          Positioned(bottom: 0, right: 0, child: Image.asset("assets/images/sister.png")),
         ],
       ),
     );

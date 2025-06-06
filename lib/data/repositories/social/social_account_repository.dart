@@ -6,7 +6,7 @@ class SocialAccountRepository{
   SocialAccountRepository({required this.client});
 
   Future<List<SocialAccountModel>> fetchSocialAccount()async{
-    final rawAccounts = await client.getGenericRequest<List>("/social-account/list");
+    final rawAccounts = await client.fetchSocialAccount();
     final accounts = rawAccounts.map((e)=> SocialAccountModel.fromJson(e)).toList();
     return accounts;
   }
